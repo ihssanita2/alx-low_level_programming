@@ -1,4 +1,3 @@
-#include "main.h"
 #include <stdio.h>
 
 /**
@@ -14,8 +13,15 @@ int main(void)
 	{
 		if ((x % 3) == 0 || (x % 5) == 0)
 		{
-			_abs(x);
+			if (x < 0)
+			{
+				x *= -1;
+				sum += x;
+			}
+			else
+			{
 			sum += x;
+			}
 		}
 	}
 			printf("%d\n", sum);
