@@ -1,5 +1,4 @@
 #include "main.h"
-
 /**
  * print_times_table - prints the n times table, starting with 0.
  * @n: type integer.
@@ -19,8 +18,7 @@ if (n >= 0 && n <= 15)
 			if (y == 0)
 			{
 				_putchar(m + '0');
-			}
-			else if (m < 10 && y != 0)
+			} else if (m < 10 && y != 0)
 			{
 				_putchar(',');
 				_putchar(' ');
@@ -35,7 +33,7 @@ if (n >= 0 && n <= 15)
 				_putchar(' ');
 				_putchar((m / 10) + '0');
 				_putchar((m % 10) + '0');
-			} 
+			}
 			else if (m >= 100)
 			{
 				_putchar(',');
@@ -44,8 +42,8 @@ if (n >= 0 && n <= 15)
 				_putchar(((m / 10) % 10) + '0');
 				_putchar((m % 10) + '0');
 			}
-		}	
-			_putchar('\n');
+		}
+		_putchar('\n');
 		}
 	}
 }
