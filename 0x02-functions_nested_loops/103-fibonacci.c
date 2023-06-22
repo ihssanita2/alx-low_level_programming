@@ -12,7 +12,7 @@ int main(void)
 	lsd1 = 1;
 	lsd2 = 2;
 	fbn = 0;
-	while (fbn < 399997)
+	while (fbn < 4000000)
 	{
 		fbn = lsd1 + lsd2;
 		if ((fbn % 2) == 0)
@@ -22,6 +22,6 @@ int main(void)
 		lsd1 = lsd2;
 		lsd2 = fbn;
 	}
-	printf("%lu\n", sumf);
+	printf("%lu\n", (sumf + 2));
 		return (0);
 }
