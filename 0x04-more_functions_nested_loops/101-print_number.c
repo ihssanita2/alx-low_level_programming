@@ -10,10 +10,6 @@ void print_number(int n)
 	unsigned int i = 1, j, count = 0;
 	unsigned int N = n, P;
 
-	if (n == 0)
-	{
-		_putchar('0');
-	}
 	if (n < 0)
 	{
 		N = -N;
