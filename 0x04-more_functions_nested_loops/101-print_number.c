@@ -7,27 +7,26 @@
  */
 void print_number(int n)
 {
-	int i = 1, j, count = 0;
+	unsigned int i = 1, j, count = 0;
 	unsigned int N = n, P;
 
 	if (n == 0)
 	{
-		_putchar(N + '0');
+		_putchar('0');
 	}
 	if (n < 0)
 	{
-		N *= -1;
+		N = -N;
 		 _putchar(45);
 	}
 	P = N;
-	while (N > 0)
+	while (N >= 10)
 	{
 		N = N / 10;
 		i *= 10;
 		count++;
 	}
-	i /= 10;
-	for (j = 1; j <= count; j++)
+	for (j = 0; j <= count; j++)
 	{
 		N = P / i;
 		i /= 10;
