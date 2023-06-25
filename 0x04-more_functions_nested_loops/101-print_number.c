@@ -7,17 +7,18 @@
  */
 void print_number(int n)
 {
-	int N, i = 1, j, count = 0;
+	int i = 1, j, count = 0;
+	unsigned int N = n;
 
-	N = n;
-	if (N == 0)
+	if (n == 0)
 	{
-		_putchar('0');
+		_putchar(N + '0');
 	}
-	if (N < 0)
+	if (n < 0)
 	{
 		N *= -1;
 		i *= -1;
+		 _putchar(45);
 	}
 	while (N > 0)
 	{
@@ -30,10 +31,6 @@ void print_number(int n)
 	{
 		N = n / i;
 		i /= 10;
-		if (n < 0 && j == 1)
-		{
-			_putchar(45);
-		}
 		_putchar((N % 10) + '0');
 	}
 }
