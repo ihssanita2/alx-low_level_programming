@@ -32,7 +32,7 @@ void print_number(int n)
 		i /= 10;
 		if (n < 0 && j == 1)
 		{
-			_putchar('-');
+			_putchar(45);
 		}
 		_putchar((N % 10) + '0');
 	}
