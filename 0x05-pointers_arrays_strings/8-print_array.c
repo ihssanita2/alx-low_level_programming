@@ -9,10 +9,11 @@
  */
 void print_array(int *a, int n)
 {
-	int j, i = 0, p;
+	int j, i = -1, p;
 
-	if (a == NULL)
+	if (a == NULL || n <= 0)
 	{
+		printf("\n");
 		return;
 	}
 	while ((*(a + i)) != '\0')
