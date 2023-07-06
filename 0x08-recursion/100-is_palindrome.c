@@ -1,33 +1,51 @@
 #include "main.h"
-
+int _strlen(char *s);
+int compare(char *sorg, char *srcp);
 /**
- * is_palindrome - returns 1 if a string is a palindrome and 0 if not.
- * @s: the string to check.
- * Return: 1 success, 0 if not.
- */
+*is_palindrome - returns 1 if a string is a palindrome and 0 if not.
+*@s: the string to check.
+*Return:  returns 1 if a string is a palindrome and 0 if not.
+*/
 int is_palindrome(char *s)
 {
-	int i = 1;
-
-	if (n == 0 || n == 1)
+	if (*s == '\0')
 	{
-	return (n);
+	return (1);
 	}
-	else if (n < 0)
+	_strlen(s);
+	return (compare(s, s + (_strlen(s) - 1)));
+}
+/**
+*_strlen - returns the length of a string.
+*@s: the string to mesure.
+*Return:  the length of a string.
+*/
+int _strlen(char *s)
+{
+	if (*s != '\0')
 	{
-	return (-1);
+	return (1 + _strlen(s + 1));
 	}
-	else if (n >= 2)
+	else
+	return (0);
+}
+/**
+*compare - compare tow strings.
+*@sorg: the originale string.
+*@srcp: reversed pointer.
+*Return:  1 success 0 othewise.
+*/
+int compare(char *sorg, char *srcp)
+{
+	if (*sorg == *srcp && *sorg)
 	{
-		if (n == i * i && n % i == 0)
-		{
-		return (i);
-		}
-		else
-		{
-		i++;
-		_sqrt_recursion(n);
-		}
+		sorg++;
+		srcp--;
+		return (compare(sorg, srcp));
 	}
-return (-1);
+	if (*sorg != *srcp)
+	{
+		return (0);
+	}
+	return (1);
 }
