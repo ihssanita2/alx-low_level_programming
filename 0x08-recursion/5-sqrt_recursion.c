@@ -1,5 +1,5 @@
 #include "main.h"
-
+int natsqr(int n, int i);
 /**
  * _sqrt_recursion - returns the natural square root of a number.
  * @n: input number.
@@ -7,8 +7,6 @@
  */
 int _sqrt_recursion(int n)
 {
-	int i = 1;
-
 	if (n == 0 || n == 1)
 	{
 	return (n);
@@ -17,17 +15,26 @@ int _sqrt_recursion(int n)
 	{
 	return (-1);
 	}
-	else if (n >= 2)
+	else
 	{
-		if (n == i * i && n % i == 0)
-		{
-		return (i);
-		}
-		else
-		{
-		i++;
-		_sqrt_recursion(n);
-		}
+	return (natsqr(n, 2));
 	}
-return (-1);
+}
+/**
+* natsqr - returns the natural square root of a number.
+* @n: input number.
+* @i: input number.
+* Return: the natural square.
+*/
+int natsqr(int n, int i)
+{
+	if (i > (n / 2))
+	{
+	return (-1);
+	}
+	if (n == i * i)
+	{
+	return (i);
+	}
+	return (natsqr(n, ++i));
 }
