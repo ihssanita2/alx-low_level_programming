@@ -13,17 +13,21 @@ char *_strdup(char *str)
 unsigned int i, size;
 char *Array;
 
-size = _strlen_recursion(str);
-Array = (char *)malloc(size);
-if (str == NULL || Array == NULL)
+if (str == NULL)
 {
 return (NULL);
 }
-
-for (i = 0; i <= size; i++)
+size = 1 + _strlen_recursion(str);
+Array = (char *)malloc(size);
+if (Array == NULL)
+{
+return (NULL);
+}
+for (i = 0; i < size; i++)
 {
 Array[i] = str[i];
 }
+Array[i] = '\0';
 return (Array);
 }
 
