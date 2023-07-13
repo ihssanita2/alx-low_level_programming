@@ -13,6 +13,6 @@ if (ptr == NULL)
 {
 exit(98);
 }
-free (ptr);
+free(ptr);
 return (ptr);
 }
