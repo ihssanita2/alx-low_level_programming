@@ -14,16 +14,16 @@ unsigned int i, j;
 va_start(args, n);
 for (i = 0; i < n - 1; ++i)
 {
-printf("%d", va_arg(args, int));
-j = 0;
-if (separator != NULL)
-{
-while (separator[j])
-{
-	printf("%c", separator[j]);
-	j++;
-}
-}
+	printf("%d", va_arg(args, int));
+	j = 0;
+	if (separator != NULL)
+	{
+		while (separator[j])
+		{
+			printf("%c", separator[j]);
+			j++;
+		}
+	}
 }
 printf("%d\n", va_arg(args, int));
 va_end(args);
