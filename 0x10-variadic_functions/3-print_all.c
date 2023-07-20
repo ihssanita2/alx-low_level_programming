@@ -1,6 +1,5 @@
 #include "variadic_functions.h"
 
-/*ihssaneer*/
 /**
 *print_all - prints anything, followed by a new line.
 *@format: the list of types of arguments passed to the function.
@@ -44,3 +43,4 @@ void print_all(const char * const format, ...)
 	}
 		printf("\n");
 		va_end(args);
+}
