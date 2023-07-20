@@ -12,11 +12,11 @@ va_list args;
 unsigned int i, j;
 
 va_start(args, n);
-for (i = 0; i < n - 1; ++i)
+for (i = 0; i < n; ++i)
 {
 	printf("%d", va_arg(args, int));
 	j = 0;
-	if (separator != NULL)
+	if (separator != NULL && i < (n - 1))
 	{
 		while (separator[j])
 		{
@@ -25,6 +25,6 @@ for (i = 0; i < n - 1; ++i)
 		}
 	}
 }
-printf("%d\n", va_arg(args, int));
+printf("\n");
 va_end(args);
 }
