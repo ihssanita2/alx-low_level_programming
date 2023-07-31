@@ -18,7 +18,7 @@ size_t print_list(const list_t *h)
 	while (tmp != NULL)
 	{
 		if (tmp->str == NULL)
-			printf("[0] (nil)");
+			printf("[0] (nil)\n");
 		else
 			printf("[%d] %s\n", tmp->len, tmp->str);
 		nbr_of_nodes++;
