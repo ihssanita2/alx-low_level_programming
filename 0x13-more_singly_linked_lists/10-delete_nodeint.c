@@ -63,6 +63,5 @@ unsigned int struct_len(listint_t **h)
 		tmp = tmp->next;
 		nbr_of_nodes++;
 	}
-	printf("%d\n", nbr_of_nodes);
 	return (nbr_of_nodes);
 }
