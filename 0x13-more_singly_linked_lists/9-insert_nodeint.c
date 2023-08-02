@@ -15,24 +15,22 @@ listint_t *insert_nodeint_at_index(listint_t **head, unsigned int idx, int n)
 	/* Code section :*/
 	if (head == NULL)
 		return (NULL);
-	/**
-	 *  Create a new memory on the heap with the size
-	 *  of listint_t and check if it NULL.
-	 */
 	new = (listint_t *) malloc(sizeof(listint_t));
 	if (new == NULL)
 		return (NULL);
-	/* Attribute the new values to the new node */
 	new->n = n;
 	new->next = NULL;
-	/* ???? */
 	if (*head == NULL || idx == 0)
+	{
+		*head = new;
+		return (new);
+	}
+	if (idx == 0)
 	{
 		new->next = *head;
 		*head = new;
 		return (new);
 	}
-	/* Sersching for the node with the (nth - 1) index */
 	tmp = *head;
 	while (tmp->next != NULL && i < (idx - 1))
 	{
@@ -41,7 +39,6 @@ listint_t *insert_nodeint_at_index(listint_t **head, unsigned int idx, int n)
 	}
 	if (tmp->next == NULL && idx > i)
 	{
-		free(new);
 		return (NULL);
 	}
 	else
