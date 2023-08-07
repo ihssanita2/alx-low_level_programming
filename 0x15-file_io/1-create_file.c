@@ -10,22 +10,20 @@
 int create_file(const char *filename, char *text_content)
 {
 	/* Variables declaration section :*/
-	int f_index = 0, len;
+	int f_index = 0;
 	ssize_t w_bites = 0;
 	/*code section : */
 	if (filename == NULL)
 		return (-1);
-	if (text_content != NULL)
-		len = strlen(text_content);
 	umask(0000);
 	f_index = open(filename, O_RDWR | O_TRUNC | O_CREAT, 0600);
 	if (f_index == -1)
 		return (-1);
-	w_bites = write(f_index, text_content, len);
-	if ((w_bites == -1))
-	{
+	if (text_content == NULL)
+		text_content = "\0";
+	w_bites = write(f_index, text_content, strlen(text_content));
+	if (w_bites == -1)
 		return (-1);
-	}
 	close(f_index);
 	/* return section :*/
 	return (1);
