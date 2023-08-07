@@ -24,7 +24,6 @@ int create_file(const char *filename, char *text_content)
 	w_bites = write(f_index, text_content, len);
 	if ((w_bites == -1))
 	{
-		close(f_index);
 		return (-1);
 	}
 	close(f_index);
