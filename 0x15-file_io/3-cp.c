@@ -26,7 +26,7 @@ int main(int argc, char *argv[])
 	{	dprintf(STDERR_FILENO, "Error: Can't write to %s\n", argv[2]);
 		exit(99);
 	}
-	while ((r_bites = read(f1_index, buffer, BUF_1024)) >= 0)
+	while ((r_bites = read(f1_index, buffer, BUF_1024)) > 0)
 	{	w_bites = write(f2_index, buffer, r_bites);
 		if (w_bites == -1 || r_bites != w_bites)
 		{	dprintf(STDERR_FILENO, "Error: Can't write to %s\n", argv[2]);
