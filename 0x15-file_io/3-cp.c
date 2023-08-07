@@ -15,11 +15,11 @@ int main(int argc, char *argv[])
 	{	dprintf(STDERR_FILENO, "Usage: cp file_from file_to\n");
 		exit(97);
 	}
-	if (access(argv[1], F_OK) == -1 || access(argv[1], R_OK) == -1)
+	f1_index = open(argv[1], O_RDONLY);
+	if (f1_index == -1)
 	{	dprintf(STDERR_FILENO, "Can't read from file %s", argv[1]);
 		exit(98);
 	}
-	f1_index = open(argv[1], O_RDONLY);
 	umask(0000);
 	f2_index = open(argv[2], O_CREAT | O_TRUNC | O_RDWR, 0664);
 	if (f2_index == -1)
