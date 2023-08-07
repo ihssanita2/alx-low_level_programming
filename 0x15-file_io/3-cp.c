@@ -13,7 +13,7 @@ int main(int argc, char *argv[])
 
 	if (argc != 3)
 	{	dprintf(STDERR_FILENO, "Usage: cp file_from file_to\n");
-		exit(97); ok
+		exit(97);
 	}
 	f1_index = open(argv[1], O_RDONLY);
 	if (f1_index == -1)
