@@ -1,4 +1,3 @@
-#include <string.h>
 #include "main.h"
 
 /*ihssaneer*/
@@ -16,8 +15,9 @@ int append_text_to_file(const char *filename, char *text_content)
 	/*code section : */
 	if (filename == NULL)
 		return (-1);
+	if (text_content == NULL)
+		return (-1);
 	f_index = open(filename, O_WRONLY | O_APPEND);
-	/*printf("\n%d\n", f_index);*/
 	if (f_index == -1)
 		return (-1);
 	w_bites = write(f_index, text_content, strlen(text_content));
@@ -28,5 +28,5 @@ int append_text_to_file(const char *filename, char *text_content)
 	}
 	close(f_index);
 	/* return section :*/
-	return (f_index);
+	return (1);
 }
