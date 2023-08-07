@@ -15,8 +15,8 @@ int create_file(const char *filename, char *text_content)
 	/*code section : */
 	if (filename == NULL)
 		return (-1);
+	umask(0000);
 	f_index = open(filename, O_RDWR | O_TRUNC | O_CREAT, 0600);
-	/*printf("\n%d\n", f_index);*/
 	if (f_index == -1)
 		return (-1);
 	w_bites = write(f_index, text_content, strlen(text_content));
