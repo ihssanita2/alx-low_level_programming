@@ -16,7 +16,7 @@ int main(int argc, char *argv[])
 		exit(97);
 	}
 	f1_index = open(argv[1], O_RDONLY);
-	if (access(argv[1], F_OK) == -1 || access(argv[1], R_OK) == -1)
+	if (f1_index == -1)
 	{	dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", argv[1]);
 		exit(98);
 	}
