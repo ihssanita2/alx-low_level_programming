@@ -7,7 +7,8 @@
  */
 int main(int argc, char *argv[])
 {
-	int f1_index, f2_index, w_bites, r_bites;
+	int f1_index = 0, f2_index = 0;
+	ssize_t w_bites = 0, r_bites = 0;
 	char buffer[BUF_1024];
 
 	if (argc != 3)
@@ -20,7 +21,7 @@ int main(int argc, char *argv[])
 		exit(98);
 	}
 	umask(0000);
-	f2_index = open(argv[2], O_CREAT | O_TRUNC | O_RDWR, 0664);
+	f2_index = open(argv[2], O_CREAT | O_TRUNC | O_WRONLY, 0664);
 	if (f2_index == -1)
 	{	dprintf(STDERR_FILENO, "Error: Can't write to %s\n", argv[2]);
 		exit(99);
