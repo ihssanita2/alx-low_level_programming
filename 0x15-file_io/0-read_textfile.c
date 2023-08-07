@@ -20,7 +20,6 @@ ssize_t read_textfile(const char *filename, size_t letters)
 	if (filename == NULL)
 		return (0);
 	f_index = open(filename, O_RDWR);
-	printf("\n%d\n", f_index);
 	if (f_index == -1)
 	{
 		return (0);
