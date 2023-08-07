@@ -8,7 +8,7 @@
 int main(int argc, char *argv[])
 {
 	int f1_index = 0, f2_index = 0;
-	ssize_t w_bites = 0, r_bites = 0;
+	int w_bites, r_bites;
 	char buffer[BUF_1024];
 
 	if (argc != 3)
